@@ -133,6 +133,56 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 .depoimento { margin: 0; }
 .depoimento blockquote { margin: 0 0 18px; font-family: var(--fonte-titulo); font-style: italic; font-size: clamp(21px, 1.9vw, 28px); line-height: 1.35; color: var(--texto); }
 .depoimento figcaption { font-size: 14px; font-weight: 600; color: var(--texto-suave); }
+/* ── Galeria de bolos reais + sabores ────────────────────────────────── */
+.galeria-painel, .sabores-painel { width: 100%; max-width: var(--largura); }
+.galeria { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.galeria figure { margin: 0; }
+.galeria img {
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: 16px; background: var(--fundo-2);
+  box-shadow: 0 14px 34px rgb(90 58 46 / .16);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.galeria li:hover img { transform: translateY(-4px); box-shadow: 0 20px 44px rgb(90 58 46 / .22); }
+.galeria figcaption { margin-top: 10px; text-align: center; font-size: 14px; font-weight: 700; letter-spacing: .04em; color: #9A3A55; }
+@media (max-width: 960px) { .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } }
+.sabores { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 28px 40px; }
+.sabores-tipo { margin: 0 0 14px; text-align: center; font-family: var(--fonte-texto); font-size: 14px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
+.sabores-lista { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.sabores-lista li {
+  background: rgb(244 198 215 / .55); color: #8A2E48; border-radius: 999px;
+  padding: 8px 16px 8px 14px; font-weight: 700; font-size: 15px;
+}
+.sabores-lista li::before { content: "♥"; color: var(--acento); font-size: .75em; margin-right: 7px; opacity: .8; }
+
+/* ── Menu & prices (formato dos flyers: barra rosa + etiqueta de preço) ── */
+.cardapio { width: 100%; max-width: var(--largura); }
+.cardapio-titulo { display: flex; align-items: center; gap: 16px; justify-content: center; text-align: center; color: #9A3A55; margin-bottom: 28px; }
+.cardapio-titulo::before, .cardapio-titulo::after { content: "♥"; font-size: .6em; color: var(--acento); opacity: .75; }
+.ofertas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px 32px; align-items: start; }
+.oferta-barra {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px;
+  background: rgb(244 198 215 / .55); border-radius: 999px; padding: 8px 8px 8px 20px;
+}
+.oferta-nome { font-weight: 800; font-size: 16px; letter-spacing: .03em; text-transform: uppercase; color: #9A3A55; }
+.oferta-nome small { font-size: .8em; font-weight: 700; }
+.oferta-preco {
+  flex: none; background: rgb(224 122 154 / .28); color: #8A2E48; border-radius: 999px;
+  padding: 5px 14px; font-weight: 800; font-size: 17px; white-space: nowrap;
+}
+.oferta-preco small { font-size: .78em; font-weight: 700; }
+.oferta-preco--consulta { font-size: 14px; }
+.oferta p { margin: 8px 0 0 20px; font-style: italic; font-size: 15px; line-height: 1.5; }
+.oferta p strong { color: #8A2E48; font-style: normal; }
+@media (max-width: 640px) {
+  .cardapio { padding: 24px 14px; }
+  .oferta-barra { flex-wrap: nowrap; border-radius: 22px; padding: 6px 6px 6px 14px; }
+  .oferta-nome { font-size: 13.5px; line-height: 1.3; }
+  .oferta-preco { font-size: 15px; padding: 5px 10px; }
+  .oferta-preco small { display: block; font-size: 10px; line-height: 1.1; text-align: center; }
+  .oferta-preco--consulta { font-size: 12px; }
+  .oferta p { margin-left: 14px; font-size: 14px; }
+}
 .redes { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 24px 0 0; font-size: 15px; }
 .redes a, .painel p a { color: var(--acento); font-weight: 600; text-underline-offset: 3px; }
 
