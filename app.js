@@ -182,4 +182,22 @@
       }
     });
   }
+
+  /* ── Menu móvel ───────────────────────────────────────────────────────── */
+  const cabecalho = document.querySelector(".topo");
+  const botaoMenu = document.querySelector(".menu-botao");
+  const painelMenu = document.getElementById("menu-movel");
+  if (cabecalho && botaoMenu && painelMenu) {
+    const definir = (aberto) => {
+      cabecalho.classList.toggle("menu-aberto", aberto);
+      botaoMenu.setAttribute("aria-expanded", String(aberto));
+      botaoMenu.setAttribute("aria-label", aberto ? "Close menu" : "Open menu");
+    };
+    const aberto = () => cabecalho.classList.contains("menu-aberto");
+    botaoMenu.addEventListener("click", () => definir(!aberto()));
+    painelMenu.addEventListener("click", (e) => { if (e.target.closest("a")) definir(false); });
+    document.addEventListener("click", (e) => { if (aberto() && !cabecalho.contains(e.target)) definir(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && aberto()) { definir(false); botaoMenu.focus(); } });
+    matchMedia("(min-width: 761px)").addEventListener("change", (e) => { if (e.matches) definir(false); });
+  }
 })();
