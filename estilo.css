@@ -354,3 +354,9 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
   .cine { height: 100svh; }
   .momento:not(:first-of-type), .cine-dica { display: none; }
 }
+
+/* ── Conteúdo do CMS ──────────────────────────────────────────────────── */
+.cardapio-grupo { display: contents; }
+[aria-busy="true"].galeria { min-height: 320px; }
+[aria-busy="true"][data-cms="menu"] { display: block; min-height: 480px; }
+.cms-aviso { margin: 0; text-align: center; font-style: italic; }

@@ -1,0 +1,12 @@
+{
+  "fotos": [
+    { "imagen": "/assets/galeria/gender-reveal.webp", "titulo": "Gender reveal", "descripcion": "Gender reveal cake with a rainbow, gold balloons and a teddy bear", "visible": true },
+    { "imagen": "/assets/galeria/minnie.webp", "titulo": "Minnie 1st birthday", "descripcion": "Two-tier pink and white Minnie Mouse first birthday cake", "visible": true },
+    { "imagen": "/assets/galeria/princess.webp", "titulo": "Princess party", "descripcion": "Two-tier pink princess cake with a tiara and gold lettering", "visible": true },
+    { "imagen": "/assets/galeria/sophia.webp", "titulo": "Floral & personalized", "descripcion": "White cake with sugar roses, baby's breath and a personalized name", "visible": true },
+    { "imagen": "/assets/galeria/strawberry.webp", "titulo": "Strawberry Shortcake", "descripcion": "Two-tier Strawberry Shortcake themed cake with a strawberry house", "visible": true },
+    { "imagen": "/assets/galeria/beach.webp", "titulo": "Beach theme", "descripcion": "Beach themed cake with sand, starfish and sugar sails", "visible": true },
+    { "imagen": "/assets/galeria/petals.webp", "titulo": "White petals", "descripcion": "White cake covered in sculpted petals with gold candles", "visible": true },
+    { "imagen": "/assets/galeria/wedding.webp", "titulo": "Wedding", "descripcion": "Two-tier ivory wedding cake with cascading red and white roses", "visible": true }
+  ]
+}

@@ -126,6 +126,52 @@
   document.querySelectorAll(".revelar").forEach((el) => io.observe(el));
   document.querySelectorAll("[data-ano]").forEach((el) => (el.textContent = new Date().getFullYear()));
 
+  /* ── Conteúdo editável (Pages CMS → data/*.json) ──────────────────────── */
+  const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const negrito = (t) => esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const caminho = (u) => String(u || "").replace(/^\/+/, ""); // o site vive em /cakes-by-luna/: caminho relativo
+  const visivel = (x) => x && x.visible !== false;
+  const carregarJSON = (url) => fetch(url, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  const pronto = (el) => el && el.removeAttribute("aria-busy");
+  const falhou = (el, e) => {
+    console.warn("Content failed to load:", e);
+    if (el) { pronto(el); el.innerHTML = '<p class="cms-aviso">We couldn\'t load this section. Please message us on WhatsApp.</p>'; }
+  };
+
+  const elMenu = document.querySelector('[data-cms="menu"]');
+  if (elMenu) carregarJSON("data/menu.json").then((d) => {
+    const nota = document.querySelector('[data-cms="menu-nota"]');
+    if (nota && d.nota) nota.textContent = d.nota;
+    elMenu.innerHTML = (d.categorias || []).map((c) => {
+      const itens = (c.productos || []).filter(visivel);
+      if (!itens.length) return "";
+      return `<div class="painel cardapio revelar"><h3 class="cardapio-titulo">${esc(c.titulo)}</h3><ul class="ofertas">${itens.map((p) => {
+        const preco = String(p.precio || "").trim()
+          ? `<span class="oferta-preco">${esc(p.precio)}${p.unidad ? ` <small>${esc(p.unidad)}</small>` : ""}</span>`
+          : `<span class="oferta-preco oferta-preco--consulta">Ask for price</span>`;
+        return `<li class="oferta"><div class="oferta-barra"><span class="oferta-nome">${esc(p.nombre)}${p.detalle ? ` <small>${esc(p.detalle)}</small>` : ""}</span>${preco}</div>${p.descripcion ? `<p>${negrito(p.descripcion)}</p>` : ""}</li>`;
+      }).join("")}</ul></div>`;
+    }).join("");
+    pronto(elMenu);
+    elMenu.querySelectorAll(".revelar").forEach((el) => io.observe(el));
+  }).catch((e) => falhou(elMenu, e));
+
+  const elGaleria = document.querySelector('[data-cms="galeria"]');
+  if (elGaleria) carregarJSON("data/galeria.json").then((d) => {
+    elGaleria.innerHTML = (d.fotos || []).filter((f) => visivel(f) && f.imagen).map((f) =>
+      `<li><figure><img src="${esc(caminho(f.imagen))}" alt="${esc(f.descripcion || f.titulo)}" width="720" height="900" loading="lazy" decoding="async"><figcaption>${esc(f.titulo)}</figcaption></figure></li>`
+    ).join("");
+    pronto(elGaleria);
+  }).catch((e) => falhou(elGaleria, e));
+
+  const elSabores = document.querySelector('[data-cms="sabores"]');
+  const elRellenos = document.querySelector('[data-cms="rellenos"]');
+  if (elSabores || elRellenos) carregarJSON("data/sabores.json").then((d) => {
+    const lista = (arr) => (arr || []).filter((x) => String(x || "").trim()).map((x) => `<li>${esc(x)}</li>`).join("");
+    if (elSabores) elSabores.innerHTML = lista(d.sabores);
+    if (elRellenos) elRellenos.innerHTML = lista(d.rellenos);
+  }).catch((e) => falhou(elSabores, e));
+
   /* ── WhatsApp ─────────────────────────────────────────────────────────── */
   if (whats && S.whatsapp) {
     const num = String(S.whatsapp.numero || "").replace(/\D/g, "");

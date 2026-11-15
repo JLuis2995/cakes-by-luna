@@ -119,16 +119,7 @@
 
     <div class="painel galeria-painel revelar">
       <h3 class="cardapio-titulo">Some of our cakes</h3>
-      <ul class="galeria">
-        <li><figure><img src="assets/galeria/gender-reveal.webp" alt="Gender reveal cake with a rainbow, gold balloons and a teddy bear" width="720" height="900" loading="lazy"><figcaption>Gender reveal</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/minnie.webp" alt="Two-tier pink and white Minnie Mouse first birthday cake" width="720" height="900" loading="lazy"><figcaption>Minnie 1st birthday</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/princess.webp" alt="Two-tier pink princess cake with a tiara and gold lettering" width="720" height="900" loading="lazy"><figcaption>Princess party</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/sophia.webp" alt="White cake with sugar roses, baby's breath and a personalized name" width="720" height="900" loading="lazy"><figcaption>Floral &amp; personalized</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/strawberry.webp" alt="Two-tier Strawberry Shortcake themed cake with a strawberry house" width="720" height="900" loading="lazy"><figcaption>Strawberry Shortcake</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/beach.webp" alt="Beach themed cake with sand, starfish and sugar sails" width="720" height="900" loading="lazy"><figcaption>Beach theme</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/petals.webp" alt="White cake covered in sculpted petals with gold candles" width="720" height="900" loading="lazy"><figcaption>White petals</figcaption></figure></li>
-        <li><figure><img src="assets/galeria/wedding.webp" alt="Two-tier ivory wedding cake with cascading red and white roses" width="720" height="900" loading="lazy"><figcaption>Wedding</figcaption></figure></li>
-      </ul>
+      <ul class="galeria" data-cms="galeria" aria-busy="true"></ul>
     </div>
 
     <div class="painel sabores-painel revelar">
@@ -136,15 +127,11 @@
       <div class="sabores">
         <div>
           <h4 class="sabores-tipo">Cake flavors</h4>
-          <ul class="sabores-lista">
-            <li>Vanilla</li><li>Chocolate</li><li>Strawberry</li><li>Red velvet</li><li>Coconut</li><li>Oreo</li><li>Lemon</li>
-          </ul>
+          <ul class="sabores-lista" data-cms="sabores"></ul>
         </div>
         <div>
           <h4 class="sabores-tipo">Fillings</h4>
-          <ul class="sabores-lista">
-            <li>Dulce de leche</li><li>Coconut</li><li>Guava</li><li>Vanilla</li><li>Chocolate</li><li>Nutella</li><li>Brigadeiro</li><li>Strawberries &amp; cream</li><li>Cream cheese frosting</li><li>Cookies &amp; cream</li>
-          </ul>
+          <ul class="sabores-lista" data-cms="rellenos"></ul>
         </div>
       </div>
     </div>
@@ -172,96 +159,10 @@
     <div class="painel painel--cabecalho revelar">
       <span class="rotulo">04</span>
       <h2>Menu &amp; prices</h2>
-      <p>Prices per dozen unless noted. Custom orders are always welcome.</p>
+      <p data-cms="menu-nota">Prices per dozen unless noted. Custom orders are always welcome.</p>
     </div>
 
-    <div class="painel cardapio revelar">
-      <h3 class="cardapio-titulo">Cuban desserts</h3>
-      <ul class="ofertas">
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Tartalettes <small>(filled)</small></span><span class="oferta-preco">$30 <small>per dozen</small></span></div>
-          <p>Filled with coconut or guava. Themed: <strong>$35 per dozen</strong>.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Puff pastry pastries</span><span class="oferta-preco">$30 <small>per dozen</small></span></div>
-          <p>Filled with coconut or guava.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Éclairs</span><span class="oferta-preco">$35 <small>per dozen</small></span></div>
-          <p>Filled with chocolate, vanilla or whipped cream.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Cabezotes</span><span class="oferta-preco">$35 <small>per dozen</small></span></div>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Yemitas</span><span class="oferta-preco">$30 <small>per 25 pieces</small></span></div>
-          <p>Traditional Cuban egg yolk sweets.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Señoritas</span><span class="oferta-preco">$45 <small>per dozen</small></span></div>
-          <p>With Italian meringue, pastry cream or whipped cream.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Capuchinos</span><span class="oferta-preco">$35 <small>per dozen</small></span></div>
-          <p>Classic Cuban pastry with delicate layers and a sweet finish.</p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="painel cardapio revelar">
-      <h3 class="cardapio-titulo">Sweet treats &amp; shots</h3>
-      <ul class="ofertas">
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Mini cheesecakes</span><span class="oferta-preco">$50 <small>per dozen</small></span></div>
-          <p>Oreo, passion fruit, lemon, strawberry, mixed berries, pistachio, Nutella, Ferrero Rocher or dulce de leche.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Cupcakes</span><span class="oferta-preco oferta-preco--consulta">Ask for price</span></div>
-          <p>Vanilla or chocolate. Fillings: vanilla, dulce de leche, chocolate or strawberry.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Cake pops</span><span class="oferta-preco">$40 <small>per dozen</small></span></div>
-          <p>Vanilla or chocolate.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Cake sicles</span><span class="oferta-preco">$45 <small>per dozen</small></span></div>
-          <p>Vanilla cake or chocolate cake.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Tres leches shots</span><span class="oferta-preco">$50 <small>per dozen</small></span></div>
-          <p>5 oz cups. Traditional, with dulce de leche, or chocolate tres leches.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Tiramisu shots</span><span class="oferta-preco">$50 <small>per dozen</small></span></div>
-          <p>Served in individual cups.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Full chocolate shots</span><span class="oferta-preco">$50 <small>per dozen</small></span></div>
-          <p>Chocolate cake with ganache filling, decorated with chocolate ganache.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Mini chocoflanes</span><span class="oferta-preco">$40 <small>per dozen</small></span></div>
-          <p>Decorated with whipped cream or dulce de leche.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Mini puff pastry rolls</span><span class="oferta-preco">$40 <small>per dozen</small></span></div>
-          <p>Fillings: Italian meringue, dulce de leche or vanilla pastry cream.</p>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Mini brownies</span><span class="oferta-preco">$45 <small>per dozen</small></span></div>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Chocolate-covered Oreos</span><span class="oferta-preco">$35 <small>per dozen</small></span></div>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Rice Krispy treats</span><span class="oferta-preco">$40 <small>per dozen</small></span></div>
-        </li>
-        <li class="oferta">
-          <div class="oferta-barra"><span class="oferta-nome">Cold salad shots</span><span class="oferta-preco">$55 <small>per dozen</small></span></div>
-          <p>Made with chicken, pineapple and ham.</p>
-        </li>
-      </ul>
-    </div>
+    <div class="cardapio-grupo" data-cms="menu" aria-busy="true"></div>
   </section>
 
   <section id="order" class="secao">

@@ -1,0 +1,90 @@
+# Pages CMS — https://pagescms.org
+# Panel para editar precios, fotos y sabores del sitio. Todo el contenido se escribe en INGLÉS.
+media:
+  input: assets/galeria
+  output: /assets/galeria
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: menu
+    label: Menú y precios
+    type: file
+    path: data/menu.json
+    fields:
+      - name: nota
+        label: Nota debajo del título
+        type: string
+      - name: categorias
+        label: Categorías
+        type: object
+        list: true
+        fields:
+          - name: titulo
+            label: Nombre de la categoría
+            type: string
+            required: true
+          - name: productos
+            label: Productos
+            type: object
+            list: true
+            fields:
+              - name: nombre
+                label: Nombre (en inglés)
+                type: string
+                required: true
+              - name: detalle
+                label: Detalle pequeño junto al nombre (opcional, ej. "(filled)")
+                type: string
+              - name: precio
+                label: Precio (ej. "$30"). Déjalo vacío para mostrar "Ask for price"
+                type: string
+              - name: unidad
+                label: Unidad (ej. "per dozen", "per 25 pieces")
+                type: string
+              - name: descripcion
+                label: Descripción (opcional). Usa **texto** para negrita
+                type: text
+              - name: visible
+                label: Mostrar en el sitio
+                type: boolean
+                default: true
+
+  - name: galeria
+    label: Galería de pasteles
+    type: file
+    path: data/galeria.json
+    fields:
+      - name: fotos
+        label: Fotos
+        type: object
+        list: true
+        fields:
+          - name: imagen
+            label: Foto
+            type: image
+            required: true
+          - name: titulo
+            label: Título debajo de la foto (en inglés)
+            type: string
+            required: true
+          - name: descripcion
+            label: Descripción para accesibilidad y Google (en inglés)
+            type: string
+          - name: visible
+            label: Mostrar en el sitio
+            type: boolean
+            default: true
+
+  - name: sabores
+    label: Sabores y rellenos
+    type: file
+    path: data/sabores.json
+    fields:
+      - name: sabores
+        label: Sabores del pastel (en inglés)
+        type: string
+        list: true
+      - name: rellenos
+        label: Rellenos (en inglés)
+        type: string
+        list: true

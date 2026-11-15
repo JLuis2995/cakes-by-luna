@@ -1,0 +1,36 @@
+name: Optimize gallery photos
+
+# When a photo is uploaded from Pages CMS, shrink it, fix its rotation and
+# strip its metadata (including the phone's GPS location), keeping the same file name.
+on:
+  push:
+    branches: [main]
+    paths: ["assets/galeria/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: optimize-photos
+  cancel-in-progress: false
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow==11.0.0
+      - run: python .github/scripts/optimizar_fotos.py assets/galeria
+      - name: Commit optimized photos
+        run: |
+          if git diff --quiet; then echo "Nothing to optimize."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/galeria
+          git commit -m "Optimize gallery photos"
+          git pull --rebase
+          git push

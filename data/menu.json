@@ -1,0 +1,35 @@
+{
+  "nota": "Prices per dozen unless noted. Custom orders are always welcome.",
+  "categorias": [
+    {
+      "titulo": "Cuban desserts",
+      "productos": [
+        { "nombre": "Tartalettes", "detalle": "(filled)", "precio": "$30", "unidad": "per dozen", "descripcion": "Filled with coconut or guava. Themed: **$35 per dozen**.", "visible": true },
+        { "nombre": "Puff pastry pastries", "detalle": "", "precio": "$30", "unidad": "per dozen", "descripcion": "Filled with coconut or guava.", "visible": true },
+        { "nombre": "Éclairs", "detalle": "", "precio": "$35", "unidad": "per dozen", "descripcion": "Filled with chocolate, vanilla or whipped cream.", "visible": true },
+        { "nombre": "Cabezotes", "detalle": "", "precio": "$35", "unidad": "per dozen", "descripcion": "", "visible": true },
+        { "nombre": "Yemitas", "detalle": "", "precio": "$30", "unidad": "per 25 pieces", "descripcion": "Traditional Cuban egg yolk sweets.", "visible": true },
+        { "nombre": "Señoritas", "detalle": "", "precio": "$45", "unidad": "per dozen", "descripcion": "With Italian meringue, pastry cream or whipped cream.", "visible": true },
+        { "nombre": "Capuchinos", "detalle": "", "precio": "$35", "unidad": "per dozen", "descripcion": "Classic Cuban pastry with delicate layers and a sweet finish.", "visible": true }
+      ]
+    },
+    {
+      "titulo": "Sweet treats & shots",
+      "productos": [
+        { "nombre": "Mini cheesecakes", "detalle": "", "precio": "$50", "unidad": "per dozen", "descripcion": "Oreo, passion fruit, lemon, strawberry, mixed berries, pistachio, Nutella, Ferrero Rocher or dulce de leche.", "visible": true },
+        { "nombre": "Cupcakes", "detalle": "", "precio": "", "unidad": "", "descripcion": "Vanilla or chocolate. Fillings: vanilla, dulce de leche, chocolate or strawberry.", "visible": true },
+        { "nombre": "Cake pops", "detalle": "", "precio": "$40", "unidad": "per dozen", "descripcion": "Vanilla or chocolate.", "visible": true },
+        { "nombre": "Cake sicles", "detalle": "", "precio": "$45", "unidad": "per dozen", "descripcion": "Vanilla cake or chocolate cake.", "visible": true },
+        { "nombre": "Tres leches shots", "detalle": "", "precio": "$50", "unidad": "per dozen", "descripcion": "5 oz cups. Traditional, with dulce de leche, or chocolate tres leches.", "visible": true },
+        { "nombre": "Tiramisu shots", "detalle": "", "precio": "$50", "unidad": "per dozen", "descripcion": "Served in individual cups.", "visible": true },
+        { "nombre": "Full chocolate shots", "detalle": "", "precio": "$50", "unidad": "per dozen", "descripcion": "Chocolate cake with ganache filling, decorated with chocolate ganache.", "visible": true },
+        { "nombre": "Mini chocoflanes", "detalle": "", "precio": "$40", "unidad": "per dozen", "descripcion": "Decorated with whipped cream or dulce de leche.", "visible": true },
+        { "nombre": "Mini puff pastry rolls", "detalle": "", "precio": "$40", "unidad": "per dozen", "descripcion": "Fillings: Italian meringue, dulce de leche or vanilla pastry cream.", "visible": true },
+        { "nombre": "Mini brownies", "detalle": "", "precio": "$45", "unidad": "per dozen", "descripcion": "", "visible": true },
+        { "nombre": "Chocolate-covered Oreos", "detalle": "", "precio": "$35", "unidad": "per dozen", "descripcion": "", "visible": true },
+        { "nombre": "Rice Krispy treats", "detalle": "", "precio": "$40", "unidad": "per dozen", "descripcion": "", "visible": true },
+        { "nombre": "Cold salad shots", "detalle": "", "precio": "$55", "unidad": "per dozen", "descripcion": "Made with chicken, pineapple and ham.", "visible": true }
+      ]
+    }
+  ]
+}
